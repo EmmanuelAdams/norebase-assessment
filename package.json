@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
     "test": "set NODE_ENV=test && jest --detectOpenHandles --verbose  --runInBand --watchAll",
     "build": "npm install && npx tsc",
