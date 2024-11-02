@@ -17,8 +17,6 @@ const app: Application = express();
 const requiredEnvVars = [
   'PORT',
   'BASE_URL',
-  'REDIS_HOST',
-  'REDIS_PORT',
   'MONGO_URI',
   'MONGO_USERNAME',
   'MONGO_PASSWORD',
