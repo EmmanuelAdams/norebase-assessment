@@ -85,6 +85,8 @@ Make sure you have the following installed on your machine:
    MONGO_URI=mongodb://<username>:<password>@localhost:27017/<database>
    MONGO_USERNAME=<your-mongo-username>
    MONGO_PASSWORD=<your-mongo-password>
+   REDIS_PORT=1234
+   REDIS_HOST=redis://<redisurl>
    ```
 
 ## Scripts
