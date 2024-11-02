@@ -62,6 +62,8 @@ Make sure you have the following installed on your machine:
    npm run dev
    ```
 
+   Go to baseUrl/api/v1/server-status to check server status
+
 2. For production, build and start the application:
 
    ```bash

@@ -4,14 +4,17 @@ import express, { Application } from 'express';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './config/swaggerSpec';
 import likeRoutes from './routes/like.routes';
+import serverStatus from './routes/server.status.route';
 import ErrorResponse from './utils/errorResponse';
 import { statusCode } from './utils/statusCodes';
 import errorHandler from './middlewares/errorHandler';
+import cors from 'cors';
 
 dotenv.config();
 require('./config/db');
 
 const app: Application = express();
+const baseUrl = process.env.BASE_URL;
 
 const requiredEnvVars = [
   'PORT',
@@ -33,11 +36,21 @@ for (const varName of requiredEnvVars) {
 app.use(express.json());
 
 app.use(
+  cors({
+    origin: baseUrl,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+);
+
+app.use(
   '/api-docs',
   swaggerUi.serve,
   swaggerUi.setup(swaggerSpec)
 );
 app.use('/api/v1/articles', likeRoutes);
+app.use('/api/v1/', serverStatus);
 
 app.use(errorHandler);
 
