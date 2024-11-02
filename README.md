@@ -85,8 +85,7 @@ Make sure you have the following installed on your machine:
    MONGO_URI=mongodb://<username>:<password>@localhost:27017/<database>
    MONGO_USERNAME=<your-mongo-username>
    MONGO_PASSWORD=<your-mongo-password>
-   REDIS_PORT=1234
-   REDIS_HOST=redis://<redisurl>
+   REDIS_URL=redis://<redisurl>
    ```
 
 ## Scripts
@@ -106,4 +105,4 @@ The backend exposes the following API endpoints:
 
 ## Documentation
 
-Open your browser and go to http://localhost:3000/api-docs to access the API documentation.
+Open your browser and go to http://localhost:3000/api/v1/api-docs to access the API documentation.

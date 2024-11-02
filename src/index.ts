@@ -17,6 +17,7 @@ const app: Application = express();
 const requiredEnvVars = [
   'PORT',
   'BASE_URL',
+  'REDIS_URL',
   'MONGO_URI',
   'MONGO_USERNAME',
   'MONGO_PASSWORD',
@@ -43,7 +44,7 @@ app.use(
 );
 
 app.use(
-  '/api-docs',
+  '/api/v1/api-docs',
   swaggerUi.serve,
   swaggerUi.setup(swaggerSpec)
 );

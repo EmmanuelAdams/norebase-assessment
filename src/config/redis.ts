@@ -3,12 +3,8 @@ import Redis from 'ioredis';
 const redisClient = new Redis(
   process.env.REDIS_URL as any,
   {
-    password: process.env.REDIS_AUTH,
-    host: process.env.REDIS_HOST,
+    host: process.env.REDIS_HOST || 'localhost',
     port: 6379,
-    tls: {
-      rejectUnauthorized: false,
-    },
   }
 );
 
