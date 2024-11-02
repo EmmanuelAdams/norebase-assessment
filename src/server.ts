@@ -1,6 +1,6 @@
 import app from './index';
 
-const port = process.env.PORT;
+const port = process.env.PORT || 6002;
 
 const server = app.listen(port, () => {
   if (process.env.NODE_ENV !== 'test') {
