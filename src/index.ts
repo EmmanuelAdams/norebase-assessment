@@ -14,8 +14,6 @@ dotenv.config();
 require('./config/db');
 
 const app: Application = express();
-const baseUrl = process.env.BASE_URL;
-
 const requiredEnvVars = [
   'PORT',
   'BASE_URL',
@@ -37,7 +35,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: baseUrl,
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,

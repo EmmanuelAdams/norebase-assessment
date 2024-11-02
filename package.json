@@ -6,7 +6,7 @@
   "scripts": {
     "test": "set NODE_ENV=test && jest --detectOpenHandles --verbose  --runInBand --watchAll",
     "build": "npm install && npx tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/src/index.js",
     "dev": "NODE_ENV=development npx nodemon --watch src --exec ts-node src/server.ts"
   },
   "keywords": [],
